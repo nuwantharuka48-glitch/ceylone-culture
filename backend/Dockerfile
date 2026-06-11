@@ -4,10 +4,13 @@ FROM openjdk:17-jdk-slim
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy all files from the repository root directly into the container
+# Copy all repository files into the container
 COPY . /app/
 
-# Compile the standalone server file directly at the root level
+# Move into the backend folder where the Java server lives
+WORKDIR /app/backend
+
+# Compile the standalone server file
 RUN javac CeyloneCultureServer.java
 
 # Expose the port your server binds to dynamically
