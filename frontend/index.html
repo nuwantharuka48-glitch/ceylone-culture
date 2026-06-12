@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ceylone Culture - Restaurant Management System</title>
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
     <div class="app-container">
-        <!-- --- SIDEBAR NAVIGATION --- -->
         <aside class="sidebar">
             <div class="brand-section" style="padding-bottom: 20px;">
-                <img src="assets/logo.jpg" alt="Ceylon Culture Logo" style="width: 100px; height: 100px; border-radius: 50%; border: 2px solid var(--primary-gold); margin-bottom: 12px; box-shadow: var(--shadow-gold); object-fit: cover;">
+                <img src="/assets/logo.jpg" alt="Ceylon Culture Logo" style="width: 100px; height: 100px; border-radius: 50%; border: 2px solid var(--primary-gold); margin-bottom: 12px; box-shadow: var(--shadow-gold); object-fit: cover;">
                 <div class="brand-title" style="font-size: 1.5rem; line-height: 1.2;">CEYLON CULTURE</div>
                 <div class="brand-subtitle">Restaurant</div>
             </div>
@@ -65,9 +63,7 @@
             </div>
         </aside>
 
-        <!-- --- MAIN CONTENT --- -->
         <main class="main-content">
-            <!-- Header bar -->
             <header class="section-header">
                 <div class="header-title-group">
                     <h1 id="current-section-title">Dashboard Overview</h1>
@@ -79,9 +75,7 @@
                 </div>
             </header>
 
-            <!-- --- SECTION 1: DASHBOARD --- -->
             <section id="dashboard-section" class="app-section active">
-                <!-- Stat Cards -->
                 <div class="dashboard-grid">
                     <div class="stat-card">
                         <div class="stat-icon">
@@ -124,9 +118,7 @@
                     </div>
                 </div>
 
-                <!-- Recent Activities Panel -->
                 <div class="layout-equal">
-                    <!-- Standard Orders Queue -->
                     <div class="card-panel">
                         <h2 class="card-title">
                             <span>Live Orders Queue</span>
@@ -154,7 +146,6 @@
                         </div>
                     </div>
 
-                    <!-- Recent Catering and Events -->
                     <div class="card-panel">
                         <h2 class="card-title">
                             <span>Recent Catering & Event Bookings</span>
@@ -184,7 +175,6 @@
                 </div>
             </section>
 
-            <!-- --- DAILY SALES SUMMARY PANEL --- -->
             <section id="daily-sales-section" class="app-section">
                 <div class="card-panel">
                     <div class="panel-header" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
@@ -199,7 +189,6 @@
                         </div>
                     </div>
 
-                    <!-- KPI Strip -->
                     <div id="daily-kpi-strip" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin:20px 0;">
                         <div class="kpi-card" style="padding:15px; background:var(--bg-lighter); border:1px solid var(--border-color); border-radius:8px;">
                             <div style="color:var(--text-muted); font-size:0.85rem; margin-bottom:5px;">Total Meals Sold</div>
@@ -211,7 +200,6 @@
                         </div>
                     </div>
 
-                    <!-- Item-wise Breakdown Table -->
                     <div class="table-container">
                         <table class="data-table" id="daily-sales-table">
                             <thead>
@@ -231,7 +219,6 @@
                         </table>
                     </div>
 
-                    <!-- Bulk Order Items breakdown (separate sub-section) -->
                     <div style="margin-top:30px;">
                         <h3 style="font-size:1rem;color:var(--gold);margin-bottom:12px;border-bottom:1px solid var(--border-color);padding-bottom:8px;">🍽 Bulk / Catering Orders (same day)</h3>
                         <div class="table-container">
@@ -248,25 +235,20 @@
                 </div>
             </section>
 
-            <!-- --- SECTION 2: ORDER MANAGEMENT --- -->
-
             <section id="orders-section" class="app-section">
                 <div class="layout-split">
-                    <!-- Left Column: Menu Grids -->
                     <div class="card-panel">
                         <h2 class="card-title">Menu Selector</h2>
                         
-                        <!-- Sawan Promotion Banner -->
                         <div class="sawan-banner" style="background: linear-gradient(135deg, rgba(255, 102, 0, 0.1), rgba(0,0,0,0.5)); border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 18px; display: flex; gap: 20px; align-items: center; margin-bottom: 24px;">
                             <div style="flex-grow: 1;">
                                 <span class="badge" style="background: var(--primary-gold); color: #000; font-weight: 700; margin-bottom: 6px;">CEYLON SPECIALTY</span>
                                 <h3 style="font-family: var(--font-heading); color: var(--primary-gold); font-size: 1.35rem; margin-bottom: 4px;">Traditional Sawan Gathering Platters</h3>
                                 <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 0;">Experience the authentic Sri Lankan dining style! Perfectly portioned for 4 people, served with a free 1L Beverage. Click the thumbnail to view the full Sawan menu.</p>
                             </div>
-                            <img src="assets/sawan_menu.jpg" alt="Sawan Menu Thumbnail" id="sawan-menu-thumb" style="width: 75px; height: 100px; object-fit: cover; border-radius: 6px; border: 1px solid var(--border-color); cursor: pointer; transition: var(--transition-fast);" title="Click to view full Sawan Menu">
+                            <img src="/assets/sawan_menu.jpg" alt="Sawan Menu Thumbnail" id="sawan-menu-thumb" style="width: 75px; height: 100px; object-fit: cover; border-radius: 6px; border: 1px solid var(--border-color); cursor: pointer; transition: var(--transition-fast);" title="Click to view full Sawan Menu">
                         </div>
                         
-                        <!-- Categories Navigation -->
                         <div class="menu-categories" id="menu-categories-nav">
                             <button class="category-btn active" data-category="all">All Items</button>
                             <button class="category-btn" data-category="set-menus">Set Menus</button>
@@ -282,24 +264,18 @@
                             <button class="category-btn" data-category="juice-bar">Drinks & Juice Bar</button>
                         </div>
                         
-                        <!-- Menu Items Container -->
                         <div class="menu-items-grid" id="menu-items-container">
-                            <!-- Populated dynamically via JS -->
-                        </div>
+                            </div>
                     </div>
 
-                    <!-- Right Column: Cart Panel -->
                     <div class="card-panel">
                         <h2 class="card-title">Current Order</h2>
                         
-                        <!-- Order type and validation parameters -->
                         <h3 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); margin: 0 0 20px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 6px;">
                             Items Ordered
                         </h3>
 
-                        <!-- Cart Items List -->
                         <div id="cart-container">
-                            <!-- Dynamic Cart List -->
                             <div class="cart-empty" id="cart-empty-msg">
                                 <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
                                 <p>Order list is empty.<br>Select items from the menu card.</p>
@@ -307,7 +283,6 @@
                             <div class="cart-items-list" id="cart-items-list" style="display: none;"></div>
                         </div>
 
-                        <!-- Price summary blocks -->
                         <div class="receipt-summary-block">
                             <div class="summary-row">
                                 <span>Subtotal</span>
@@ -323,7 +298,6 @@
                             </div>
                         </div>
 
-                        <!-- Coupon promo entry -->
                         <div class="form-group" style="margin-bottom: 24px;">
                             <div style="display: flex; gap: 8px;">
                                 <input type="text" class="form-control" id="order-coupon-input" placeholder="Enter AI Promo Code" style="padding: 8px 12px; font-size: 0.85rem;">
@@ -332,7 +306,6 @@
                             <span id="coupon-feedback" style="display: block; font-size: 0.75rem; margin-top: 4px; font-weight: 500;"></span>
                         </div>
 
-                        <!-- Order Action Buttons -->
                         <div style="display: flex; flex-direction: column; gap: 10px;">
                             <button class="btn btn-primary" id="place-order-btn">
                                 <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
@@ -344,15 +317,12 @@
                 </div>
             </section>
 
-            <!-- --- SECTION 3: BULK ORDERS --- -->
             <section id="bulk-section" class="app-section">
                 <div class="layout-split">
-                    <!-- Left Column: Registration Form -->
                     <div class="card-panel">
                         <h2 class="card-title">Create Bulk Order</h2>
                         
                         <form id="bulk-order-form" novalidate>
-                            <!-- Row 1: Customer Name, Event Type, Table -->
                             <div class="form-row">
                                 <div class="form-group">
                                     <label class="form-label">Customer / Client Name</label>
@@ -383,7 +353,6 @@
                                 </div>
                             </div>
 
-                            <!-- Row 2: Delivery Date, Delivery Time, Special Notes -->
                             <div class="form-row">
                                 <div class="form-group">
                                     <label class="form-label">Delivery Date</label>
@@ -401,18 +370,15 @@
                                 </div>
                             </div>
 
-                            <!-- Food Selection Area -->
                             <div class="food-selection-section" style="margin-top: 20px; margin-bottom: 20px;">
                                 <h3 style="font-size: 0.95rem; color: var(--primary-gold); margin-bottom: 12px; font-family: var(--font-heading);">Food & Beverage Items Selection</h3>
                                 <div id="bulk-food-items-container" style="display: flex; flex-direction: column; gap: 10px;">
-                                    <!-- Dynamic rows added here -->
-                                </div>
+                                    </div>
                                 <button type="button" class="btn btn-outline" id="add-food-row-btn" style="margin-top: 10px; padding: 8px 16px; font-size: 0.85rem; width: auto;">
                                     + Add Category / Item Row
                                 </button>
                             </div>
 
-                            <!-- Costing review summary block -->
                             <div class="receipt-summary-block" style="background: rgba(0,0,0,0.15); padding: 16px; border-radius: 8px; border: 1px solid var(--border-color); margin-top: 10px;">
                                 <div class="summary-row">
                                     <span>Items Subtotal</span>
@@ -442,7 +408,6 @@
                                 </div>
                             </div>
 
-                            <!-- Payment details -->
                             <div class="form-row" style="margin-top: 20px;">
                                 <div class="form-group">
                                     <label class="form-label">Payment Method</label>
@@ -468,313 +433,14 @@
                         </form>
                     </div>
 
-                    <!-- Right Column: Booking Lists -->
                     <div class="card-panel">
                         <h2 class="card-title">Bulk Order Management</h2>
-                        
-                        <div class="table-container" style="max-height: 600px;">
-                            <table class="custom-table" id="bulk-events-table">
-                                <thead>
-                                    <tr>
-                                        <th>Order ID</th>
-                                        <th>Client & Event</th>
-                                        <th>Delivery Schedule</th>
-                                        <th>Total Amount</th>
-                                        <th>Payment Status</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="bulk-list-body">
-                                    <!-- Dynamic rows -->
-                                    <tr>
-                                        <td colspan="6" class="cart-empty">No bulk bookings currently registered.</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- --- SECTION 4: INVOICE GENERATOR --- -->
-            <section id="invoices-section" class="app-section">
-                <!-- Action toolbar (Hidden during print) -->
-                <div class="card-panel invoice-actions" style="margin-bottom: 24px; padding: 16px 24px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;">
-                        <div style="display: flex; align-items: center; gap: 12px; flex-grow: 1; max-width: 480px;">
-                            <label class="form-label" style="margin-bottom: 0; white-space: nowrap;">Active Document:</label>
-                            <select class="form-select" id="invoice-selector" style="padding: 8px 12px; font-size: 0.85rem;">
-                                <option value="sample">-- Load Active Transaction --</option>
-                            </select>
-                        </div>
-                        <div style="display: flex; gap: 12px;">
-                            <button class="btn btn-secondary" id="invoice-print-btn" style="width: auto; padding: 8px 20px;">
-                                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-                                <span>Print / Save PDF</span>
-                            </button>
-                            <button class="btn btn-outline-gold" id="load-sample-invoice-btn" style="width: auto; padding: 8px 20px;">
-                                Load Sample Receipt
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Printable Sheet Frame -->
-                <div class="invoice-viewer-container">
-                    <div class="invoice-preview-card" id="printable-invoice-card">
-                        <!-- Head -->
-                        <div class="invoice-header">
-                            <div class="invoice-brand" style="display: flex; align-items: center; gap: 16px;">
-                                <img src="assets/logo.jpg" alt="Ceylon Culture Logo" style="width: 60px; height: 60px; border-radius: 50%; border: 1px solid var(--primary-gold); object-fit: cover;">
-                                <div style="display: flex; flex-direction: column;">
-                                    <div class="invoice-brand-title" style="color: var(--primary-gold); line-height: 1.1; font-size: 1.8rem;">CEYLON CULTURE</div>
-                                    <div class="invoice-brand-subtitle" style="color: var(--text-muted); font-size: 0.7rem; letter-spacing: 2px;">RESTAURANT</div>
-                                </div>
-                            </div>
-                            <div class="invoice-meta-info">
-                                <div class="invoice-no" id="inv-serial">INV-CEY-000000</div>
-                                <div class="invoice-date" id="inv-date">May 23, 2026 5:12 PM</div>
-                            </div>
-                        </div>
-
-                        <!-- Address/Billing info -->
-                        <div class="invoice-billing-details">
-                            <div class="billing-col">
-                                <h4>RESTAURANT OUTLET</h4>
-                                <p>
-                                    <strong>Ceylone Culture Cafe</strong><br>
-                                    74 Galle Road, Colombo 03,<br>
-                                    Sri Lanka.<br>
-                                    Tel: +94 11 234 5678<br>
-                                    Email: ceylonculture@outlook.com
-                                </p>
-                            </div>
-                            <div class="billing-col" style="text-align: right;">
-                                <h4>CUSTOMER / INVOICE FOR</h4>
-                                <p id="inv-billing-to">
-                                    Walk-in Guest<br>
-                                    Table: Dine-In Service<br>
-                                    Order Reference: #STAND-MOCK
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Items table -->
-                        <table class="invoice-items-table">
-                            <thead>
-                                <tr>
-                                    <th style="width: 50%; text-align: left;">Item description</th>
-                                    <th style="width: 15%; text-align: center;">Qty</th>
-                                    <th style="width: 15%; text-align: right;">Rate (LKR)</th>
-                                    <th style="width: 20%; text-align: right;">Amount (LKR)</th>
-                                </tr>
-                            </thead>
-                            <tbody id="invoice-items-tbody">
-                                <!-- Populated dynamically -->
-                                <tr>
-                                    <td>Golden Kothu - Chicken (Large)</td>
-                                    <td style="text-align: center;">2</td>
-                                    <td style="text-align: right;">1,450.00</td>
-                                    <td style="text-align: right;">2,900.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Egg Hopper Station Special</td>
-                                    <td style="text-align: center;">4</td>
-                                    <td style="text-align: right;">180.00</td>
-                                    <td style="text-align: right;">720.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Spiced Ceylon Ginger Tea</td>
-                                    <td style="text-align: center;">3</td>
-                                    <td style="text-align: right;">320.00</td>
-                                    <td style="text-align: right;">960.00</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <!-- Calculations and totals -->
-                        <div class="invoice-totals">
-                            <div class="invoice-total-row">
-                                <span>Subtotal</span>
-                                <span id="inv-subtotal">4,580.00</span>
-                            </div>
-                            <div class="invoice-total-row" id="inv-service-row" style="display: none;">
-                                <span id="inv-service-label">Service Charge / Delivery</span>
-                                <span id="inv-service">0.00</span>
-                            </div>
-                            <div class="invoice-total-row" id="inv-discount-row" style="display: none;">
-                                <span id="inv-discount-label">AI Promo Discount</span>
-                                <span id="inv-discount">-0.00</span>
-                            </div>
-                            <div class="invoice-total-row" id="inv-deposit-row" style="display: none; color: #a87e2f; font-weight: 600;">
-                                <span>Event Advance Paid</span>
-                                <span id="inv-deposit">-0.00</span>
-                            </div>
-                            <div class="invoice-total-row grand-total">
-                                <span id="inv-grand-total-label">Total Amount Due</span>
-                                <span id="inv-grand-total">5,496.00</span>
-                            </div>
-                        </div>
-
-                        <!-- Footer notes -->
-                        <div class="invoice-footer">
-                            <p>Thank you for dining at Ceylone Culture!</p>
-                            <p>All items reflect authentic spices sourced from Sri Lankan farming heritage.</p>
-                            <p style="font-size: 0.6rem; color: #cbd5e1; margin-top: 10px; font-family: monospace;">Invoice generated securely via CC RMS.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- --- SECTION 5: AI PROMOTION HUB --- -->
-            <section id="ai-section" class="app-section">
-                <div class="layout-split">
-                    <!-- Left Column: Generator Form -->
-                    <div class="card-panel">
-                        <div class="card-title">
-                            <span>🤖 AI Creative Parameters</span>
-                        </div>
-                        
-                        <form id="ai-promo-form" novalidate>
-                            <div class="form-group">
-                                <label class="form-label">Campaign Category</label>
-                                <select class="form-select" id="ai-campaign-category">
-                                    <option value="Flash Discount (Limited Time)" selected>Flash Discount (Limited Time)</option>
-                                    <option value="Weekend Special Combo">Weekend Special Combo</option>
-                                    <option value="Seasonal Heritage Feast">Seasonal Heritage Feast</option>
-                                    <option value="Mid-Week Booster Pack">Mid-Week Booster Pack</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="form-label">Target Dish / Offer Details</label>
-                                <input type="text" class="form-control" id="ai-target-dish" placeholder="e.g. Cheese Kottu" value="Cheese Kottu">
-                                <div class="error-feedback">Target details must be at least 3 characters.</div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="form-label">Campaign Urgency</label>
-                                <select class="form-select" id="ai-urgency">
-                                    <option value="Urgent: 24 Hours" selected>Urgent: 24 Hours</option>
-                                    <option value="Short-Term: 3 Days">Short-Term: 3 Days</option>
-                                    <option value="Standard Campaign: 7 Days">Standard Campaign: 7 Days</option>
-                                </select>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary" id="generate-ai-btn" style="background: linear-gradient(135deg, #ff6600, #ff8533); border: none; box-shadow: var(--shadow-gold); padding: 14px 20px; font-weight: 600; font-size: 1rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                                <span>🪄 Generate AI Content</span>
-                            </button>
-                        </form>
-                    </div>
-
-                    <!-- Right Column: Social Media Preview Card -->
-                    <div class="card-panel" style="display: flex; flex-direction: column; gap: 16px;">
-                        <h2 class="card-title" style="margin-bottom: 10px;">Social Media Preview</h2>
-                        
-                        <!-- Instagram Mock Card -->
-                        <div class="instagram-post-card" style="background: #000; border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; max-width: 480px; margin: 0 auto; width: 100%;">
-                            <!-- Post Header -->
-                            <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                                <img src="assets/logo.jpg" alt="Ceylon Culture Logo" style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--primary-gold); object-fit: cover;">
-                                <span style="font-weight: 700; font-size: 0.9rem; color: #fff;">ceylon_culture</span>
-                            </div>
-
-                            <!-- Post Image Container -->
-                            <div id="ai-post-image-container" style="position: relative; width: 100%; aspect-ratio: 1/1; background: #121317; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-                                <!-- Loader Overlay -->
-                                <div id="ai-post-image-loader" style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(0,0,0,0.85); gap: 12px; z-index: 10; display: none;">
-                                    <div class="spinner" style="width: 32px; height: 32px;"></div>
-                                    <span style="font-size: 0.75rem; color: var(--primary-gold); font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase;">Generating Creative Image...</span>
-                                </div>
-                                
-                                <!-- Rendered Post Image -->
-                                <img id="ai-post-image" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&auto=format&fit=crop&q=60" alt="Campaign Visual" style="width: 100%; height: 100%; object-fit: cover; transition: opacity 0.5s ease;">
-                                
-                                <!-- Brand Header Overlay -->
-                                <div style="position: absolute; top: 0; left: 0; right: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent); padding: 15px 10px; text-align: center; pointer-events: none;">
-                                    <span style="font-family: var(--font-heading); color: var(--primary-gold); font-size: 1.5rem; font-weight: 700; letter-spacing: 1px; text-shadow: 0 2px 4px rgba(0,0,0,0.8);">CEYLON CULTURE</span>
-                                </div>
-                                
-                                <!-- Badge Tag Overlay -->
-                                <div id="ai-image-tag" style="position: absolute; right: 15px; top: 75px; background: rgba(255, 102, 0, 0.95); color: #fff; padding: 6px 12px; border-radius: 8px; font-weight: 700; font-size: 0.8rem; box-shadow: var(--shadow-sm); pointer-events: none; border: 1px solid rgba(255,255,255,0.2);">
-                                    <span id="ai-image-tag-text">Weekend Combo</span>
-                                </div>
-
-                                <!-- Contact Overlay Footer -->
-                                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); padding: 12px; display: flex; justify-content: center; align-items: center; gap: 10px; pointer-events: none; font-size: 0.75rem; color: #fff; font-weight: 600; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">
-                                    <span>📞 076 858 2571</span>
-                                    <span>|</span>
-                                    <span>✉ dushyathadushyantha86@gmail.com</span>
-                                </div>
-                            </div>
-
-                            <!-- Post Actions (Likes/Comments) -->
-                            <div style="display: flex; gap: 14px; padding: 12px 16px; align-items: center;">
-                                <svg style="width: 24px; height: 24px; fill: #ef4444; stroke: #ef4444; cursor: pointer;" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                                <svg style="width: 24px; height: 24px; stroke: #cbd5e1; fill: none; stroke-width: 2; cursor: pointer;" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-                                <svg style="width: 24px; height: 24px; stroke: #cbd5e1; fill: none; stroke-width: 2; cursor: pointer;" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                            </div>
-
-                            <!-- Post Caption Box -->
-                            <div style="padding: 0 16px 16px; max-height: 150px; overflow-y: auto; display: flex; flex-direction: column; gap: 6px; font-size: 0.85rem; line-height: 1.5; color: var(--text-primary); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 12px;" class="caption-container">
-                                <div id="ai-caption-header" style="font-weight: 700; color: var(--primary-gold);">✨ Taste the Tradition at Ceylon Culture! ✨</div>
-                                <div id="ai-caption-body">We are excited to announce our Weekend Combo: rice and curry with beer!</div>
-                                <div style="color: var(--text-muted); font-size: 0.8rem; margin-top: 4px;">📅 Valid Limited Time Only.</div>
-                                <div style="color: var(--text-muted); font-size: 0.8rem;">Don't miss out on the most authentic Sri Lankan flavors in town. Book your table now! 🍛🔥</div>
-                            </div>
-                        </div>
-
-                        <!-- Export Button -->
-                        <div style="display: flex; gap: 10px;">
-                            <button type="button" class="btn btn-primary" id="deploy-campaign-btn" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 0.85rem; padding: 10px;">
-                                🚀 Deploy Live Coupon
-                            </button>
-                            <button type="button" class="btn btn-outline" id="export-social-assets-btn" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 0.85rem; padding: 10px;">
-                                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                                <span>Export Social Assets</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                        <!-- Active Promotions List -->
-                        <div style="margin-top: 24px;">
-                            <h3 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 6px;">
-                                Active Campaigns Deployments
-                            </h3>
-                            <div class="table-container" style="max-height: 180px;">
-                                <table class="custom-table" style="font-size: 0.8rem;">
-                                    <thead>
-                                        <tr>
-                                            <th>Code</th>
-                                            <th>Target Session</th>
-                                            <th>Benefit</th>
-                                            <th>Deployed</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="deployed-promos-tbody">
-                                        <tr>
-                                            <td colspan="5" class="cart-empty" style="padding: 16px 0; font-size: 0.75rem;">No coupons active. Deploy campaign above to inject codes into standard billing.</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>
         </main>
     </div>
 
-    <!-- --- PREMIUM LIGHTBOX MODAL --- -->
-    <div class="lightbox-modal" id="sawan-lightbox">
-        <span class="lightbox-close" id="lightbox-close-btn">&times;</span>
-        <img class="lightbox-content" src="assets/sawan_menu.jpg" alt="Ceylon Culture Sawan Menu">
-    </div>
-
-    <!-- JS Files -->
-    <script src="validation.js"></script>
-    <script src="app.js"></script>
+    <script src="/app.js"></script>
 </body>
 </html>
