@@ -29,7 +29,7 @@ public class CeyloneCultureServer {
     public static void main(String[] args) throws IOException {
         // Check if the cloud environment has assigned a port, otherwise fallback to 8080
         String envPort = System.getenv("PORT");
-        int port = (envPort != null && !envPort.isEmpty()) ? Integer.parseInt(envPort) : 8080;
+        int port = (envPort != null) ? Integer.parseInt(envPort) : 8080;
 
         // Initialize HttpServer on the dynamic assignment port
         HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
