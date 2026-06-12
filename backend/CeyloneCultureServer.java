@@ -21,20 +21,18 @@ import java.util.concurrent.Executors;
  */
 public class CeyloneCultureServer {
 
-    // Check if the cloud environment has assigned a port, otherwise fallback to 8080
-	int port = System.getenv("PORT") != null ? Integer.parseInt(System.getenv("PORT")) : 8080;
-
-// Example initialization (adjust based on your actual server code)
-	HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
-    
     // Thread-safe in-memory data store for JSON payloads
     private static final List<String> orders = new CopyOnWriteArrayList<>();
     private static final List<String> bulkOrders = new CopyOnWriteArrayList<>();
     private static final List<String> promotions = new CopyOnWriteArrayList<>();
 
     public static void main(String[] args) throws IOException {
-        // Initialize HttpServer on port 8080
-        HttpServer server = HttpServer.create(new InetSocketAddress(PORT), 0);
+        // Check if the cloud environment has assigned a port, otherwise fallback to 8080
+        String envPort = System.getenv("PORT");
+        int port = (envPort != null && !envPort.isEmpty()) ? Integer.parseInt(envPort) : 8080;
+
+        // Initialize HttpServer on the dynamic assignment port
+        HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
         
         // Define REST Endpoint contexts
         server.createContext("/", new RootHandler());
@@ -51,9 +49,9 @@ public class CeyloneCultureServer {
         System.out.println("   CEYLONE CULTURE - RESTAURANT BACKEND REST API ");
         System.out.println("=================================================");
         System.out.println("Server is starting up...");
-        System.out.println("Running on: http://localhost:" + PORT);
+        System.out.println("Running on port: " + port);
         System.out.println("Endpoints available:");
-        System.out.println("  - GET  /                     (Browser Landing & Instructions)");
+        System.out.println("  - GET  /                       (Browser Landing & Instructions)");
         System.out.println("  - GET  /api/status");
         System.out.println("  - GET  /api/orders      | POST /api/orders");
         System.out.println("  - POST /api/orders/status");
@@ -136,12 +134,11 @@ public class CeyloneCultureServer {
                     "    <div class='card'>\n" +
                     "        <h1>CEYLONE CULTURE</h1>\n" +
                     "        <h2>REST API Engine <span class='badge'>ONLINE</span></h2>\n" +
-                    "        <p>The backend server is running successfully on port 8080!</p>\n" +
+                    "        <p>The backend server is running successfully!</p>\n" +
                     "        <div class='instructions'>\n" +
                     "            <strong>How to open the Restaurant Management System:</strong><br>\n" +
                     "            1. Minimize this browser window.<br>\n" +
-                    "            2. Open your file explorer and navigate to:<br>\n" +
-                    "               <span class='path'>C:\\Users\\MSI\\.gemini\\antigravity\\scratch\\ceylone-culture\\frontend\\</span><br>\n" +
+                    "            2. Open your file explorer and navigate to your frontend folder.<br>\n" +
                     "            3. Double-click on <span class='path'>index.html</span> to load the premium visual dashboard!<br><br>\n" +
                     "            <em>The dashboard will automatically hook into this running API server.</em>\n" +
                     "        </div>\n" +
@@ -186,14 +183,13 @@ public class CeyloneCultureServer {
 
             String method = exchange.getRequestMethod();
             if ("GET".equalsIgnoreCase(method)) {
-                // Combine stored raw JSON orders into a standard JSON Array
                 String response = "[" + String.join(",", orders) + "]";
                 sendResponse(exchange, 200, response);
                 
             } else if ("POST".equalsIgnoreCase(method)) {
                 String body = readRequestBody(exchange);
                 if (body != null && !body.trim().isEmpty()) {
-                    orders.add(0, body); // Prepend to orders list
+                    orders.add(0, body);
                     System.out.println("--> Received New Standard Order: " + body);
                     sendResponse(exchange, 201, "{\"message\":\"Order saved successfully\"}");
                 } else {
@@ -218,7 +214,6 @@ public class CeyloneCultureServer {
                 String body = readRequestBody(exchange);
                 System.out.println("--> Status Update Requested: " + body);
 
-                // Quick mock-parsing logic for {"id":"...", "status":"..."}
                 String orderId = extractJsonValue(body, "id");
                 String newStatus = extractJsonValue(body, "status");
 
@@ -227,7 +222,6 @@ public class CeyloneCultureServer {
                     for (int i = 0; i < orders.size(); i++) {
                         String orderStr = orders.get(i);
                         if (orderStr.contains("\"id\":\"" + orderId + "\"")) {
-                            // Simple text replacement within JSON string
                             String updated = orderStr.replaceFirst("\"status\":\"[^\"]+\"", "\"status\":\"" + newStatus + "\"");
                             orders.set(i, updated);
                             found = true;
